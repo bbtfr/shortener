@@ -3,7 +3,10 @@ window.Dummy =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
+    Dummy.Collections.ShortenedUrls::url = '/shortened_urls'
+    new Dummy.Routers.ShortenedUrls()
+    Backbone.history.start()
 
 $(document).ready ->
   Dummy.initialize()

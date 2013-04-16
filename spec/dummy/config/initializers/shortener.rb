@@ -12,6 +12,6 @@ Shortener.configure do |config|
   config.match_url = /^\/([a-z0-9]+)\/?$/
 
   # No tracking on default
-  config.tracking = false
-  config.tracking_with_new_thread = true
+  config.tracking = true
+  config.tracking_with_new_thread = false
 end

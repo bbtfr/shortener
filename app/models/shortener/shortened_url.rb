@@ -73,7 +73,9 @@ class Shortener::ShortenedUrl < ActiveRecord::Base
       click.track env
       click.save
 
-      ActiveRecord::Base.connection.close
+      # if Shortener.tracking_with_new_thread
+        ActiveRecord::Base.connection.close
+      # end
     end
 
     if Shortener.tracking_with_new_thread

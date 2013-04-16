@@ -1,0 +1,31 @@
+@import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins";
+
+#container {
+  padding-top: 100px;
+}
+
+.unit {
+  padding: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: $baseLineHeight * 1.5;
+  color: $heroUnitLeadColor;
+  background-color: $heroUnitBackground;
+  @include border-radius(6px);
+}
+
+table {
+  td.url {
+    a {
+      display:inline-block;
+      max-width: 400px; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  td.clicks {
+    text-align: center;
+  }
+}

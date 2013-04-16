@@ -1,0 +1,32 @@
+<div class="unit">
+  <div class="page-header">
+    <h1>Url Shortener <small>Short url generator</small></h1>
+  </div>
+  <p>
+    <strong>Paste your long URL here:</strong>
+  </p>
+  <form class="form-inline">
+    <input type="text" class="input-xxlarge" id="url" placeholder="Long URL">
+    <button type="submit" class="btn">Shorten URL</button>
+  </form>
+</div>
+
+<table class="table table-hover text-left">
+  <colgroup>
+    <col style="width: 300px;">
+    <col style="width: 100px;">
+    <col style="width: 125px;">
+    <col style="width: 50px;">
+    <col style="width: 75px;">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>LONG URL</th>
+      <th>CREATED</th>
+      <th>SHORT URL</th>
+      <th></th>
+      <th>CLICKS</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>

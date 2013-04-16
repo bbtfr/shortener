@@ -26,4 +26,5 @@ gem "thin"
 
 group :development do
   gem 'meta_request'
+  gem 'pry-debugger'
 end
