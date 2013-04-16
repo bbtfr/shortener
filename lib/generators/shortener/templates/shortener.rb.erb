@@ -1,0 +1,17 @@
+# encoding: utf-8
+Shortener.configure do |config|
+  # Shortener url generate key length
+  config.unique_key_length = <%= Shortener.unique_key_length %>
+
+  # Character set to chose from:
+  #  :alphanum     - a-z0-9     -  has about 60 million possible combos
+  #  :alphanumcase - a-zA-Z0-9  -  has about 900 million possible combos
+  config.charset = <%= Shortener.charset.inspect %>
+
+  # Matching url prefix
+  config.match_url = <%= Shortener.match_url.inspect %>
+
+  # No tracking on default
+  config.tracking = <%= Shortener.tracking %>
+  config.tracking_with_new_thread = <%= Shortener.tracking_with_new_thread %>
+end
