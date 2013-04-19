@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.timeago
+//= require jquery.flot
+//= require bootstrap
 //= require underscore
 //= require backbone
 //= require dummy

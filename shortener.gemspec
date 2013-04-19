@@ -15,6 +15,10 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "shortener"
   s.required_rubygems_version = "> 1.3.6"
   s.add_dependency              "rails", ">= 3.0.7"
+  s.add_dependency              "geoip"
+  s.add_dependency              "useragent"
+  s.add_dependency              "rqrcode-rails3"
+  s.add_dependency              "mini_magick"
   s.add_development_dependency  "sqlite3"
   s.add_development_dependency  "rspec-rails"
   # shoulda-matchers 1.5.0 seems won't work

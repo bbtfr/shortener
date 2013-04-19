@@ -2,7 +2,11 @@ PATH
   remote: .
   specs:
     shortener (0.0.1)
+      geoip
+      mini_magick
       rails (>= 3.0.7)
+      rqrcode-rails3
+      useragent
 
 GEM
   remote: http://rubygems.org/
@@ -70,6 +74,7 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    geoip (1.2.1)
     hike (1.2.2)
     i18n (0.6.1)
     jbuilder (1.2.0)
@@ -89,6 +94,8 @@ GEM
     metaclass (0.0.1)
     method_source (0.8.1)
     mime-types (1.22)
+    mini_magick (3.5.0)
+      subexec (~> 0.2.1)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.7.2)
@@ -127,6 +134,9 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rqrcode (0.4.2)
+    rqrcode-rails3 (0.1.6)
+      rqrcode (>= 0.4.2)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -153,6 +163,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
+    subexec (0.2.3)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -163,6 +174,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
+    useragent (0.5.0)
 
 PLATFORMS
   ruby

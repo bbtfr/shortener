@@ -85,6 +85,49 @@ class Shortener::ShortenedUrl < ActiveRecord::Base
     end
   end
 
+  # details
+  # analyze clicks
+  def analyze_clicks(type = :month)
+    options = {
+      month: {
+        since: DateTime.now - 2.year,
+        group_by: :all_months_until,
+        step: :beginning_of_month,
+      }
+    }
+
+    since = options[type][:since]
+    step = options[type][:step]
+    group_by = options[type][:group_by]
+
+    ret = {}
+
+    grouped_clicks = shortened_clicks.where(["created_at > ?", since]).group_by do |click|
+      click.created_at.send(step).to_i
+    end
+
+    since.send(group_by, DateTime.now).each do |date|
+      timestamp = date.to_i
+      clicks = grouped_clicks[timestamp]
+      ret[date] = if clicks then clicks.length else 0 end
+    end
+
+    ret
+  end
+
+  # analyze
+  def analyze attribute
+    ret = {}
+
+    shortened_clicks.each do |click|
+      key = click.send(attribute) 
+      key = 'Unknown' if key.blank?
+      ret[key] = ret.fetch(key, 0) + 1
+    end
+
+    ret
+  end
+
   private
 
   # we'll rely on the DB to make sure the unique key is really unique.
@@ -112,5 +155,19 @@ class Shortener::ShortenedUrl < ActiveRecord::Base
     charset = ::Shortener.key_chars
     (0...::Shortener.unique_key_length).map{ charset[rand(charset.size)] }.join
   end
+end
 
+class DateTime
+  def all_months_until to
+    from = self
+    from, to = to, from if from > to
+    m = DateTime.new from.year, from.month
+    result = []
+    while m <= to
+      result << m
+      m >>= 1
+    end
+
+    result
+  end
 end

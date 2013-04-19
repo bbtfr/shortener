@@ -1,10 +1,24 @@
 require_dependency "shortener/application_controller"
+require 'rqrcode-rails3'
+require 'mini_magick'
 
 module Shortener
   class ShortenedUrlsController < ApplicationController
+    include ShortenerHelper
+
+    respond_to :html, only: [:index, :show]
     respond_to :json
-    before_filter :find_shortened_url, :only => [:show, :update, :destroy]
+
+    before_filter :find_shortened_url, :except => [:index, :create]
     before_filter :find_all_shortened_urls, :only => [:index]
+
+    def show
+      respond_to do |format|
+        format.json
+        format.svg  { render :qrcode => short_url(@shortened_url), :level => :l, :unit => 10 }
+        format.png  { render :qrcode => short_url(@shortened_url), :unit => 5 }
+      end
+    end
 
     def create
       @shortened_url = Shortener::ShortenedUrl.generate(params[:shortened_url])

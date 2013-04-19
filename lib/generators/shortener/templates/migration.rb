@@ -26,10 +26,12 @@ class CreateShortenerTable < ActiveRecord::Migration
     # tracking info
     create_table :shortener_shortened_clicks do |t|
       t.integer :shortened_url_id
-      t.string :agent
-      t.string :referer
-      t.string :ip
       t.string :remote_ip
+      t.string :referer
+      t.string :agent
+      t.string :country
+      t.string :browser
+      t.string :platform
       t.timestamps
     end
   end

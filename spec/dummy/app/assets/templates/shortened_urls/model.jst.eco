@@ -1,5 +1,5 @@
 <td class="url"><a href="<%= @model.get 'url' %>"><%= @model.get 'url' %></a></td>
-<td><%= @model.get 'create' %></td>
+<td><%= @model.get 'created' %></td>
 <td><a href="<%= @model.get 'short_url' %>"><%= @model.get 'short_url' %></a></td>
-<td><a><strong>Details</strong></a></td>
+<td><a href="#shortened_urls/<%= @model.id %>"><strong>Details</strong></a></td>
 <td class="clicks"><%= @model.get 'use_count' %></td>

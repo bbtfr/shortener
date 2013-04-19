@@ -15,10 +15,12 @@ ActiveRecord::Schema.define(:version => 20130416065954) do
 
   create_table "shortener_shortened_clicks", :force => true do |t|
     t.integer  "shortened_url_id"
-    t.string   "agent"
-    t.string   "referer"
-    t.string   "ip"
     t.string   "remote_ip"
+    t.string   "referer"
+    t.string   "agent"
+    t.string   "country"
+    t.string   "browser"
+    t.string   "platform"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
