@@ -1,6 +1,6 @@
-class Dummy.Views.ShortenedUrlsModel extends Backbone.View
+class Shortener.Views.ShortenedUrlsModel extends Backbone.View
 
-  template: JST['shortened_urls/model']
+  template: JST['shortener/shortened_urls/model']
 
   events:
     "click .destroy" : "destroy"

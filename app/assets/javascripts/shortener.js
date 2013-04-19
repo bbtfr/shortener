@@ -10,9 +10,15 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery.timeago
+//= require jquery.flot
 //= require bootstrap
 //= require underscore
 //= require backbone
-//= require shortener
+//= require shortener/main
+//= require_tree ../templates/shortener
+//= require_tree ./shortener/models
+//= require_tree ./shortener/collections
+//= require_tree ./shortener/views
+//= require_tree ./shortener/routers
+//= require_tree .

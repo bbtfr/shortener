@@ -1,0 +1,89 @@
+@import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins";
+
+#main {
+  padding-top: 100px;
+}
+
+.unit {
+  padding: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: $baseLineHeight * 1.5;
+  color: $heroUnitLeadColor;
+  background-color: $heroUnitBackground;
+  @include border-radius(6px);
+}
+
+table {
+  td.url {
+    a {
+      display:inline-block;
+      max-width: 400px; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  td.clicks {
+    text-align: center;
+  }
+}
+
+.page-header {
+  input.h1 {
+    background: transparent;
+    border: 0;
+    font-size: 38.5px;
+    font-weight: bold;
+    line-height: 40px;
+    margin: 10px 0;
+    color: inherit;
+    text-rendering: optimizelegibility;
+    width: auto;
+  }
+}
+
+.chart-container {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.legend {
+  top: 0;
+  left: 50px;
+  width: 120px;
+  z-index: 10;
+  color: #777;
+  background-color: #fff;
+  border: 1px solid #c6c6c6;
+  font-weight: bold;
+  position: absolute;
+  padding: 10px 20px;
+  @include box-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+#total_clicks {
+  color: #333;
+  font-size: 24px;
+}
+
+#rqr {
+  padding: 30px;
+}
+
+#clicks {
+  height: 300px;
+}
+
+#referrers, #browsers, #countries, #platforms {
+  height: 300px;
+}
+
+#flotTip {
+  background: #fff;
+  z-index: 100;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  @include border-radius(2px);
+}

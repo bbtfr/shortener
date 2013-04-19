@@ -1,6 +1,6 @@
-class Dummy.Views.ShortenedUrlsIndex extends Backbone.View
+class Shortener.Views.ShortenedUrlsIndex extends Backbone.View
 
-  template: JST['shortened_urls/index']
+  template: JST['shortener/shortened_urls/index']
 
   events:
     "submit form": "create"
@@ -16,7 +16,7 @@ class Dummy.Views.ShortenedUrlsIndex extends Backbone.View
     false
 
   add: (model) =>
-    view = new Dummy.Views.ShortenedUrlsModel({model : model})
+    view = new Shortener.Views.ShortenedUrlsModel({model : model})
     @$("tbody").append(view.render().el)
 
   render: ->
