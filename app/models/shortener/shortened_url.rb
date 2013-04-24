@@ -134,6 +134,7 @@ class Shortener::ShortenedUrl < ActiveRecord::Base
   # if it isn't unique, the unique index will catch this and raise an error
   def create
     count = 0
+    self.unique_key ||= generate_unique_key
     begin
       super
     rescue ActiveRecord::RecordNotUnique, ActiveRecord::StatementInvalid => err
