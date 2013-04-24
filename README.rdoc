@@ -1,7 +1,7 @@
 = Shortener
 
 Shortener is a Rails Engine Gem that makes it easy to create and interpret shortened URLs on your own domain from within your Rails application. Once installed Shortener will generate, store URLS and "unshorten" shortened URLs for your applications visitors, all whilst collecting basic usage metrics.
-
+Part of the code comes from jpmcgrath/shortener & johnthethird/shortener.
 ---
 
 == Overview
@@ -11,6 +11,8 @@ The majority of the Shortener consists of three parts:
 * a model for storing the details of the shortened link;
 * a middleware to accept incoming requests and redirecting them to the target URL; 
 * a helper for generating shortened URLs from controllers and views.
+* a frondend build with backbone.js & bootstrap
+* clicks tracking & compiling statistics
 
 === Some niceities of Shortener:
 
@@ -33,7 +35,12 @@ The majority of the Shortener consists of three parts:
 
 You can use the latest Rails 3 gem with the latest Shortener gem. In your Gemfile:
 
-  gem 'shortener'
+  gem 'jbuilder'
+  gem 'shortener', github: 'bbtfr/shortener'
+  
+  # for the frondend
+  gem "backbone-on-rails"
+  gem "bootstrap-sass"
   
 After you install Shortener run the generator:
 
@@ -41,7 +48,19 @@ After you install Shortener run the generator:
   
 This generator will create a migration to create the shortened_urls table where your shortened URLs will be stored, and it will also create a initializer file in config/shortener.
 
-Then edit initializer file config/shortener.rb, for example:
+Then add those lines into your application.js & application.css
+
+  // javascripts
+  //= require bootstrap
+  //= require underscore
+  //= require backbone
+  //= require shortener
+
+  * stylesheets
+  *= require bootstrap
+  *= require shortener
+
+And then edit initializer file config/shortener.rb, for example:
 
   config.url_prefix = "/"
 
