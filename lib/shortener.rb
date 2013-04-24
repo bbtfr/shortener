@@ -37,7 +37,7 @@ module Shortener
   end
 
   # no tracking on default
-  self.tracking = false
+  self.tracking = true
   self.tracking_with_new_thread = true
 
   def self.key_chars
