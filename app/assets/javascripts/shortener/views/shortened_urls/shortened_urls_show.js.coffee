@@ -1,6 +1,8 @@
 class Shortener.Views.ShortenedUrlsShow extends Backbone.View
 
   template: JST['shortener/shortened_urls/show']
+  
+  className: "container"
 
   events:
     "click .page-header input.h1": "selectAll"

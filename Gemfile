@@ -8,10 +8,10 @@ gemspec
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
 gem "backbone-on-rails"
+gem "bootstrap-sass"
 # gem "rails-backbone"
 
 gem "sass-rails"
-gem "bootstrap-sass"
 
 gem "jbuilder"
 # Declare any dependencies that are still in development here instead of in

@@ -2,6 +2,8 @@ class Shortener.Views.ShortenedUrlsIndex extends Backbone.View
 
   template: JST['shortener/shortened_urls/index']
 
+  className: "container"
+
   events:
     "submit form": "create"
 
