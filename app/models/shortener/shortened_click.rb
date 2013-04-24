@@ -7,10 +7,11 @@ class Shortener::ShortenedClick < ActiveRecord::Base
   GeoIPDataPath = File.absolute_path File.join(__FILE__, "../../../../config")
 
   def track env
+    logger.info(env)
+
     self.remote_ip = env["REMOTE_ADDR"].to_s
     self.referer = env["HTTP_REFERER"].to_s
     self.agent = env["HTTP_USER_AGENT"].to_s
-    puts geo_ip.country(self.remote_ip)
     self.country = geo_ip.country(self.remote_ip).country_name.to_s
     self.browser = user_agent.browser.to_s
     self.platform = user_agent.platform.to_s
