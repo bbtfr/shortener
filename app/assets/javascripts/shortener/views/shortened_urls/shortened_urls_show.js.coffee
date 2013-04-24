@@ -1,7 +1,7 @@
 class Shortener.Views.ShortenedUrlsShow extends Backbone.View
 
   template: JST['shortener/shortened_urls/show']
-  
+
   className: "container"
 
   events:
@@ -29,7 +29,7 @@ class Shortener.Views.ShortenedUrlsShow extends Backbone.View
     @$("#total_clicks").text(t)
 
   updateReferrers: (data) =>
-    @pieChart("#referrers", data, {series: {pie: {innerRadius: 0.7, radius: 1}}})
+    @pieChart("#referrers", data, {series: {pie: {innerRadius: 0.7, radius: 1, label: {show: false}}}})
 
   updateBrowsers: (data) =>
     @barChart("#browsers", data)
