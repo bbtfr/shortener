@@ -138,11 +138,12 @@ class Shortener::ShortenedUrl < ActiveRecord::Base
       super
     rescue ActiveRecord::RecordNotUnique, ActiveRecord::StatementInvalid => err
       if (count +=1) < 5
-        logger.info("retrying with different unique key")
+        logger.info("  #{err}")
+        logger.info("  Retrying with different unique key")
         self.unique_key = generate_unique_key
         retry
       else
-        logger.info("too many retries, giving up")
+        logger.info("  Too many retries, giving up")
         raise
       end
     end
