@@ -4,6 +4,9 @@ Shortener is a Rails Engine Gem that makes it easy to create and interpret short
 Part of the code comes from jpmcgrath/shortener & johnthethird/shortener.
 ---
 
+see the demo page via http://demo-shortener.herokuapp.com/
+and the source code is here, https://github.com/bbtfr/shortener-demo
+
 == Overview
 
 The majority of the Shortener consists of three parts:
