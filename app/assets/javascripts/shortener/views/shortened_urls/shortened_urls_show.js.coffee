@@ -120,11 +120,11 @@ class Shortener.Views.ShortenedUrlsShow extends Backbone.View
             color: '#fff'
             width: 2
           startAngle: 2
-          label:
-            show: true
-            radius: 1
-            formatter: (label, series) ->
-                "<div class=\"label label-inverse\">#{label} #{Math.round(series.percent)}%</div>"
+          # label:
+          #   show: true
+          #   radius: 1
+          #   formatter: (label, series) ->
+          #       "<div class=\"label label-inverse\">#{label} #{Math.round(series.percent)}%</div>"
       legend:
         show: false
       tooltipOpts:
