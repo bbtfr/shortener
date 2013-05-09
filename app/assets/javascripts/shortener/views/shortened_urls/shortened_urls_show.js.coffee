@@ -79,7 +79,7 @@ class Shortener.Views.ShortenedUrlsShow extends Backbone.View
         defaultTheme: false
       xaxis:
         mode: "time"
-        timeformat: "%b %y"
+        timezone: "browser"
       yaxis:
         tickDecimals: 0
     $.plot(@$(selector), data, $.extend(true, options, defaultOptions, @flotCommonOptions))
